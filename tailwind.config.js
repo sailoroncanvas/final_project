@@ -29,6 +29,8 @@ module.exports = {
       },
       fontFamily: {
         sans: ['Pretendard', ...defaultTheme.fontFamily.sans],
+        lobster: ['Lobster'],
+        chakra: ['Chakra Petch']
       },
       fontSize: {
         10: ['0.625rem', { lineHeight: '1rem' }],
