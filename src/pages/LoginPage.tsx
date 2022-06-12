@@ -19,35 +19,37 @@ export const LoginPage = () => {
 
   return (
     <div className="m-4">
-      <div className="text-3xl font-bold mb-10">로그인</div>
+      <div className="text-4xl font-bold mb-10 text-center mt-32 font-lobster text-cyan-300">Login</div>
       <div>
-        <TextField
-          placeholder="이메일을 입력해주세요."
-          label="이메일"
-          value={email}
-          onChange={(event) => {
-            setEmail(event.target.value);
-          }}
-        />
+        <div className="mb-4">
+          <TextField
+            placeholder="이메일을 입력해주세요."
+            label="이메일"
+            value={email}
+            onChange={(event) => {
+              setEmail(event.target.value);
+            }}
+          />
+        </div>
+
         <TextField
           label="비밀번호"
           placeholder="비밀번호를 입력해주세요."
           type="password"
           value={password}
-          onChange={(event) => setPassword(event.target.value)}
-        />
+          onChange={(event) => setPassword(event.target.value)} />
       </div>
 
       <div className="mt-10">
         <div
-          className="bg-gray-800 text-white text-center py-4"
+          className="bg-cyan-800 text-white text-center py-4 rounded-full"
           onClick={() => {
             checkUser();
           }}
         >
           로그인
         </div>
-        <div className="text-center py-4 text-color-gray-800 border-gray-800 border mt-2">
+        <div className="text-center py-4 text-color-gray-800 border-gray-800 border mt-2 rounded-full">
           회원가입
         </div>
       </div>

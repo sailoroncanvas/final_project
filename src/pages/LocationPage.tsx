@@ -4,6 +4,7 @@ import { ReactComponent as Icon } from '../assets/icons/Polygon 1.svg'
 export const LocationPage = () => {
     return (
         <div>
+            <div className="font-lobster text-green-400 text-center mt-12 text-4xl">Hello, I'm Moi!</div>
             <img src='moi.png'
                 className="py-16 pl-4" />
             <div className='text-2xl text-center'>오늘 날씨에 뭐입지?</div>

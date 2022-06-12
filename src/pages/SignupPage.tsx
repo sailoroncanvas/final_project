@@ -4,9 +4,9 @@ import { TextField } from '../components/TextField';
 export const SignupPage = () => {
   return (
     <div className="m-4">
-      <div className="text-2xl font-bold mb-10">회원가입</div>
+      <div className="text-4xl font-bold mb-10 font-lobster mt-32 text-center text-yellow-200">Signup Page</div>
       <div>
-        <TextField label="닉네임" placeholder="닉네임을 입력해주세요." />
+        <TextField label="아이디" placeholder="아이디를 입력해주세요." />
         <div className="mb-4"></div>
         <TextField label="이메일" placeholder="이메일을 입력해주세요." />
         <div className="mb-4"></div>
@@ -15,7 +15,7 @@ export const SignupPage = () => {
         <TextField label="전화번호" placeholder="전화번호를 입력해주세요." />
       </div>
       <div>
-        <div className="border-2 border-gray-800 rounded-md text-gray-800 text-center py-4 font-semibold mt-7">
+        <div className="border-2 border-yellow-700 rounded-full text-gray-800 text-center py-4 font-semibold mt-7 bg-yellow-300">
           회원가입
         </div>
       </div>

@@ -1,3 +1,4 @@
+const { zIndex } = require('tailwindcss/defaultTheme');
 const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
@@ -70,6 +71,12 @@ module.exports = {
         'screen-10': 'calc( 100vh - 10rem )',
         'screen-15': 'calc( 100vh - 15rem )',
       },
+      lineHeight: {
+        40: '10rem'
+      },
+      zIndex: {
+        100: '100'
+      }
     },
   },
   variants: {
