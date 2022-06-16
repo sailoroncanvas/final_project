@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { TextField } from '../components/TextField';
 import { useHistory } from 'react-router-dom';
+import axios from 'axios';
+
 
 export const LoginPage = () => {
   const [email, setEmail] = useState("");
@@ -8,13 +10,41 @@ export const LoginPage = () => {
   const { push, replace } = useHistory();
 
 
+
+
+
+
+
   const checkUser = () => {
     if (email === "" || password === "") {
       alert("아이디와 비밀번호를 입력해주세요");
     }
+
+
+    axios
+      .post('http://localhost:1337/api/auth/local', {
+        identifier: email,
+        password: password,
+      })
+      .then((response) => {
+        // Handle success.
+        console.log('Well done!');
+        console.log('User token', response.data.jwt);
+        localStorage.setItem("token", response.data.jwt);
+        replace("/");
+      })
+      .catch((error) => {
+        // Handle error.
+        console.log('An error occurred:', error.response);
+      });
+
   }
 
-
+  // useEffect(() => {
+  //   if (localStorage.getItem("token")) {
+  //     replace("/");
+  //   }
+  // }, [])
 
 
   return (

@@ -4,7 +4,7 @@ import { ReactComponent as DiaryIcon } from '../assets/icons/diary.svg';
 import { ReactComponent as MyIcon } from '../assets/icons/my.svg';
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 export const HomePage = () => {
   const history = useHistory()
@@ -13,9 +13,21 @@ export const HomePage = () => {
       <div className='flex justify-between px-6 items-center'>
         <div className='font-lobster py-6 text-3xl text-cyan-400'>Message from Moi</div>
         <div className='flex justfy-end items-center space-x-2'>
-          <AlarmIcon className='w-8 h-8' />
-          <DiaryIcon className='w-8 h-8' />
-          <MyIcon className='w-8 h-8' />
+          <div>
+            <Link to="/alarm">
+              <button>
+                <AlarmIcon className='w-10 h-10 py-2' />
+              </button>
+            </Link>
+          </div>
+          <div>
+            <Link to="/mydiary">
+              <button>
+                <DiaryIcon className='w-10 h-10 py-2' />
+              </button>
+            </Link>
+          </div>
+          <MyIcon className='w-10 h-10 py-2' />
         </div>
       </div>
 
@@ -49,10 +61,10 @@ export const HomePage = () => {
 
           <div>
             <div className="font-chakra mt-6 ml-6 font-semibold text-xl">Weather</div>
-            <div className='mt-4 text-center text-xl font-medium'>햇살 따사로운 날</div>
-            <div className="font-chakra mt-6 ml-6 font-semibold text-xl mb-4">Fashion Log</div>
-            <div className='text-center text-xl font-medium'>얇은 민소매 플로럴 원피스 딱 좋았다</div>
-            <div className='text-center text-xl font-medium'>그래도 저녁까지 있을 거면 봄 카디건 가져올 걸</div>
+            <div className='mt-4 text-center text-lg font-medium'>햇살 따사로운 날</div>
+            <div className="font-chakra mt-6 ml-6 font-semibold text-lg mb-4">Fashion Log</div>
+            <div className='text-center text-lg font-medium'>얇은 민소매 플로럴 원피스 딱 좋았다</div>
+            <div className='text-center text-lg font-medium'>그래도 저녁까지 있을 거면 봄 카디건 가져올 걸</div>
             <div className="font-chakra mt-4 mr-4 mb-2 font-semibold text-right">Date: 2022. 06. 11. 2 P.M. / 27° </div>
           </div>
         </SwiperSlide>
@@ -110,8 +122,18 @@ export const HomePage = () => {
       <div>
         <div className="mt-10 h-48 flex flex-row-justify justify-center items-center space-x-8"
           style={{ backgroundImage: 'url(/kind-steel.png)' }}>
-          <div className='border-y-4 border-4 h-40 w-40 bg-white border-white drop-shadow-md text-center flex items-center justify-center'><div className='text-sm text-black'>지금 사람들은 <br /> 이렇게 입었어요! <br /> <span className='mt-6 font-lobster text-2xl text-indigo-500'>#OOTD</span></div></div>
-          <div className='border-y-4 border-4 h-40 w-40 bg-white border-white drop-shadow-md text-center flex items-center justify-center'><div className='text-sm text-black'>특별하고 색다른 <br /> 상황별 코디 추천 <br />  <span className='mt-6 font-lobster text-2xl text-pink-400'>#SOTD</span> </div></div>
+          <Link to="/bulletin">
+            <button>
+              <div className='border-y-4 border-4 h-40 w-40 bg-white border-white drop-shadow-md text-center flex items-center justify-center'><div className='text-sm text-black'>지금 사람들은 <br /> 이렇게 입었어요! <br /> <span className='mt-6 font-lobster text-2xl text-indigo-500'>#OOTD</span></div></div>
+            </button>
+          </Link>
+          <div>
+            <Link to='/sotd'>
+              <button>
+                <div className='border-y-4 border-4 h-40 w-40 bg-white border-white drop-shadow-md text-center flex items-center justify-center'><div className='text-sm text-black'>특별하고 색다른 <br /> 상황별 코디 추천 <br />  <span className='mt-6 font-lobster text-2xl text-pink-400'>#SOTD</span> </div></div>
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
 

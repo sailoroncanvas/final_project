@@ -2,8 +2,10 @@ import React, { useEffect, useState } from "react";
 import { ReactComponent as Album_heartIcon } from '../assets/icons/album_heart.svg';
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
+import { Link } from "react-router-dom";
 
 const dummy = [{
+    
     image: 'https://images.unsplash.com/photo-1647891941746-fe1d53ddc7a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
     weather: "How do you feel about Today's Weather?",
     fashionLog: "Show off your style!",
@@ -57,7 +59,12 @@ export const MyDiaryPage = () => {
                     </div>
 
                     <div>
-                        <div className="bg-rose-400 py-4 mt-10 ml-12 mr-12 mb-6 text-white text-center font-lobster text-lg rounded-full">Diary Closed!</div>
+                        <Link to="/home">
+                            <button>
+                                <div className="bg-rose-400 py-4 mt-10 ml-12 mr-12 mb-6 text-white text-center font-lobster text-lg rounded-full center-align">Diary Closed!</div>
+                            </button>
+                        </Link>
+
                     </div>
 
                 </SwiperSlide>)}
