@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { ReactComponent as AlarmIcon } from '../assets/icons/alarm.svg';
 import { ReactComponent as DiaryIcon } from '../assets/icons/diary.svg';
 import { ReactComponent as MyIcon } from '../assets/icons/my.svg';
@@ -6,14 +6,39 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
-
-axios.get('http://localhost:1337/api/weathers').then(response => {
-  console.log(response);
-});
+import WeatherAvatar from '../components/WeatherAvatar';
 
 
 export const HomePage = () => {
-  const history = useHistory()
+  const history = useHistory();
+  const [data, setData] = useState<any>();
+  const [diaries, setDiaries] = useState<any>([]);
+  const [degree, setDegree] = useState('');
+
+  console.log('[HomePage] data : ', data);
+  data && console.log('[HomePage] data.data : ', data.data);
+
+
+
+  useEffect(() => {
+    axios.get('http://localhost:1337/api/weathers').then(response => {
+      setData(response.data);
+      setDegree(response.data.data[0].attributes.Temperature.toString());
+    });
+    fetch("http://localhost:1337/api/diaries", {
+      method: 'GET',
+      headers: {
+        accept: "application/json",
+        Authorization: 'Bearer 2ee95a772dbff633a524aa9a3d2f140a5dce16f4b054db7c3577cafd6f37843a6ed867ffb7289c82ba99e8fba996f622c0277b9c3197e92bf5fe0bde403d419157825b4e2e8ffd24a3ff4fe0e125a831f3d6540e7f65fcf5168f4d53ecb6291b93f9b5a33fb19c1f458a43a50427f3c7370cfc2c0b78192d4035868cc3eafdb8'
+      }
+    }).then((result) => result.json()).then((json) => setDiaries(json))
+
+
+
+  }, [])
+
+  console.log('diary', diaries);
+
   return (
     <div>
       <div className='flex justify-between px-6 items-center'>
@@ -37,16 +62,7 @@ export const HomePage = () => {
         </div>
       </div>
 
-      <div className='py-6 flex items-center justify-center'>
-        <img src="https://images.unsplash.com/photo-1517495306984-f84210f9daa8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
-          alt=""
-          className='rounded-full w-52 h-52 relative' />
-        <div className='absolute'>
-          <div className='font-chakra text-white text-4xl text-center py-2'>Seoul</div>
-          <div className='font-chakra text-white text-xl text-center py-2'>29°</div>
-          <div className='text-white text-lg text-center'>AM. 09:41</div>
-        </div>
-      </div>
+      {data && <WeatherAvatar date={data.data[0].attributes.Date} Temperature={data.data[0].attributes.Temperature} Location={data.data[0].attributes.Location} />}
 
 
       <Swiper
@@ -54,28 +70,26 @@ export const HomePage = () => {
         slidesPerView={1}
         onSlideChange={() => history.push('/mydiary')}
       >
-        <SwiperSlide>
-          <div>
-            <div className='font-lobster pl-6 py-6 text-rose-500 text-3xl justify-end'>Letter from My Diary</div>
-            <div className='flex items-center justify-center'>
-              <img src="https://images.unsplash.com/photo-1542295669297-4d352b042bca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
-                alt=""></img>
-            </div>
-          </div>
+        {diaries.data?.map((diary: any) => {
+          if (diary.attributes.weather.includes(degree)) {
+            return (<SwiperSlide>
+              <div>
+                <div className='font-lobster pl-6 py-6 text-rose-500 text-3xl justify-end'>Letter from My Diary</div>
+                <div className='flex items-center justify-center'>
+                  <img src={`${diary.attributes.image}`} alt=""></img>
+                </div>
+              </div>
+              <div>
+                <div className="font-chakra mt-6 ml-6 font-semibold text-xl">Weather</div>
+                <div className='mt-4 text-center text-lg font-medium'>{diary.attributes.weather}</div>
+                <div className="font-chakra mt-6 ml-6 font-semibold text-lg mb-4">Fashion Log</div>
+                <div className='text-center text-lg font-medium'>{diary.attributes.fashionLog}</div>
+                <div className="font-chakra mt-4 mr-4 mb-2 font-semibold text-right">Date: {diary.attributes.DateTime}</div>
+              </div>
+            </SwiperSlide>);
+          }
 
-
-
-          <div>
-            <div className="font-chakra mt-6 ml-6 font-semibold text-xl">Weather</div>
-            <div className='mt-4 text-center text-lg font-medium'>햇살 따사로운 날</div>
-            <div className="font-chakra mt-6 ml-6 font-semibold text-lg mb-4">Fashion Log</div>
-            <div className='text-center text-lg font-medium'>얇은 민소매 플로럴 원피스 딱 좋았다</div>
-            <div className='text-center text-lg font-medium'>그래도 저녁까지 있을 거면 봄 카디건 가져올 걸</div>
-            <div className="font-chakra mt-4 mr-4 mb-2 font-semibold text-right">Date: 2022. 06. 11. 2 P.M. / 27° </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide></SwiperSlide>
-
+        })}
       </Swiper>
 
 
@@ -148,7 +162,8 @@ export const HomePage = () => {
 
 
 
-    </div>
+    </div >
+
 
   );
 };

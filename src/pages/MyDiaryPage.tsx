@@ -58,10 +58,10 @@ export const MyDiaryPage = () => {
                         <div className="font-chakra mt-6 ml-6 font-semibold text-xl">Fashion Log</div> <div className="font-chakra text-lg text-center mt-4">{el.attributes.fashionLog}</div>
                     </div>
 
-                    <div>
+                    <div className="place-content-center center-justify">
                         <Link to="/home">
                             <button>
-                                <div className="bg-rose-400 py-4 mt-10 ml-12 mr-12 mb-6 text-white text-center font-lobster text-lg rounded-full center-align">Diary Closed!</div>
+                                <div className="mt-8 ml-40 bg-rose-400 py-4  text-white text-center font-lobster text-lg rounded-full">Diary Closed!</div>
                             </button>
                         </Link>
 
