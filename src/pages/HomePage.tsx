@@ -5,6 +5,12 @@ import { ReactComponent as MyIcon } from '../assets/icons/my.svg';
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import { Link, useHistory } from 'react-router-dom';
+import axios from 'axios';
+
+axios.get('http://localhost:1337/api/weathers').then(response => {
+  console.log(response);
+});
+
 
 export const HomePage = () => {
   const history = useHistory()
