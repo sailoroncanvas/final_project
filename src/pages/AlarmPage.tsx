@@ -1,8 +1,19 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import { ReactComponent as BackIcon } from '../assets/icons/back.svg';
 
 export const AlarmPage = () => {
     return (
         <div>
+
+            <div>
+                <Link to=" /home">
+                    <button>
+                        <BackIcon />
+                    </button>
+                </Link>
+            </div>
+
             <div className='text-center py-12 font-lobster text-4xl text-teal-400'>Alarm</div>
 
             <div>

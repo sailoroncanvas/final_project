@@ -13,7 +13,7 @@ export const LocationPage = () => {
             <div className="border-4 border-black h-14 flex justify-end items-center mr-8 ml-8">
                 <Icon />
             </div>
-
-        </div>
-    );
+            </div>
+            );
+        
 };

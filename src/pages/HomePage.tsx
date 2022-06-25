@@ -41,8 +41,8 @@ export const HomePage = () => {
 
   return (
     <div>
-      <div className='flex justify-between px-6 items-center'>
-        <div className='font-lobster py-6 text-3xl text-cyan-400'>Message from Moi</div>
+      <div className='flex justify-end px-4 mt-4 items-center'>
+
         <div className='flex justfy-end items-center space-x-2'>
           <div>
             <Link to="/alarm">
@@ -58,9 +58,15 @@ export const HomePage = () => {
               </button>
             </Link>
           </div>
-          <MyIcon className='w-10 h-10 py-2' />
+          <Link to="/my">
+            <button>
+              <MyIcon className='w-10 h-10 py-2' />
+            </button>
+          </Link>
         </div>
       </div>
+
+      <div className='font-lobster py-6 text-3xl text-cyan-400 ml-6'>Message from Moi</div>
 
       {data && <WeatherAvatar date={data.data[0].attributes.Date} Temperature={data.data[0].attributes.Temperature} Location={data.data[0].attributes.Location} />}
 

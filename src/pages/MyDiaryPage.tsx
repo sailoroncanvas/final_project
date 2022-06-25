@@ -3,6 +3,7 @@ import { ReactComponent as Album_heartIcon } from '../assets/icons/album_heart.s
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import { Link } from "react-router-dom";
+import { ReactComponent as CreateIcon } from '../assets/icons/create.svg';
 
 const dummy = [{
     
@@ -58,10 +59,18 @@ export const MyDiaryPage = () => {
                         <div className="font-chakra mt-6 ml-6 font-semibold text-xl">Fashion Log</div> <div className="font-chakra text-lg text-center mt-4">{el.attributes.fashionLog}</div>
                     </div>
 
-                    <div className="place-content-center center-justify">
+                    <div className="flex justify-end px-4 mt-4 items-center mt-8">
+                        <Link to="/post">
+                            <button>
+                        <CreateIcon></CreateIcon>
+                        </button>
+                        </Link>
+                    </div>
+
+                    <div className="place-content-center center-justify py-8">
                         <Link to="/home">
                             <button>
-                                <div className="mt-8 ml-40 bg-rose-400 py-4  text-white text-center font-lobster text-lg rounded-full">Diary Closed!</div>
+                                <div className="ml-40 bg-rose-400 py-4 text-white text-center font-lobster text-lg rounded-full">Diary Closed!</div>
                             </button>
                         </Link>
 

@@ -10,6 +10,7 @@ import { MyDiaryPage } from './MyDiaryPage';
 import { AlarmPage } from './AlarmPage';
 import { MyPage } from './MyPage';
 import { SOTDPage } from './SOTDPage';
+import { CasualPage } from './CasualPage';
 import { PostPage } from './PostPage';
 
 export const Router = () => {
@@ -25,6 +26,7 @@ export const Router = () => {
       <Route path="/alarm" component={AlarmPage} />
       <Route path="/my" component={MyPage} />
       <Route path="/sotd" component={SOTDPage} />
+      <Route path="/casual" component={CasualPage} />
       <Route path="/post" component={PostPage} />
       <Route path="/">
         <Redirect to="/" />

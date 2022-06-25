@@ -40,11 +40,11 @@ export const LoginPage = () => {
 
   }
 
-  // useEffect(() => {
-  //   if (localStorage.getItem("token")) {
-  //     replace("/");
-  //   }
-  // }, [])
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      replace("/");
+    }
+  }, [])
 
 
   return (

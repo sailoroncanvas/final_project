@@ -1,10 +1,21 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
+import { ReactComponent as BackIcon } from '../assets/icons/back.svg';
 
 export const SOTDPage = () => {
     return (
         <div>
 
-            <div className="text-center py-6 font-bold text-3xl font-lobster text-pink-400">#SOTD</div>
+            <div>
+                <Link to=" /home">
+                    <button>
+                        <BackIcon />
+                    </button>
+                </Link>
+            </div>
+
+
+            <div className="text-center py-6 font-bold text-4xl font-lobster text-pink-400">#SOTD</div>
 
             <div className='justify-center'>
                 <div className="flex flex-col space-y-12 ">
@@ -13,14 +24,20 @@ export const SOTDPage = () => {
                     <div>
                         <div className="flex flex-row space-x-12 justify-center py-12">
 
+
                             <div>
-                                <img
-                                    src="https://images.unsplash.com/photo-1525828024186-5294af6c926d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
-                                    alt=""
-                                    className="w-32 h-32 object-cover rounded-full"
-                                />
-                                <div className="font-bold mt-2 text-center">캐주얼</div>
+                                <Link to=" /casual">
+                                    <button>
+                                        <img
+                                            src="https://images.unsplash.com/photo-1525828024186-5294af6c926d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+                                            alt=""
+                                            className="w-32 h-32 object-cover rounded-full"
+                                        />
+                                        <div className="font-bold mt-2 text-center">캐주얼</div>
+                                    </button>
+                                </Link>
                             </div>
+
 
 
                             <div>
@@ -72,7 +89,7 @@ export const SOTDPage = () => {
                                         alt=""
                                         className="w-32 h-32 object-cover rounded-full"
                                     />
-                                    <div className="font-bold mt-2 text-center">데일리</div>
+                                    <div className="font-bold mt-2 text-center">액세서리</div>
                                 </div>
 
 
