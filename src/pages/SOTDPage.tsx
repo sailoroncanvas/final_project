@@ -26,7 +26,7 @@ export const SOTDPage = () => {
 
 
                             <div>
-                                <Link to=" /casual">
+                                <Link to="/casual">
                                     <button>
                                         <img
                                             src="https://images.unsplash.com/photo-1525828024186-5294af6c926d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
@@ -100,7 +100,7 @@ export const SOTDPage = () => {
                                         alt=""
                                         className="w-32 h-32 object-cover rounded-full"
                                     />
-                                    <div className="font-bold mt-2 text-center">겨울정장</div>
+                                    <div className="font-bold mt-2 text-center">시즌별 특별 아이템</div>
                                 </div>
 
                             </div>

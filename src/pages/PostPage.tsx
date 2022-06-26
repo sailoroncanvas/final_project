@@ -24,7 +24,7 @@ export const PostPage = () => {
 
     const create = () => {
         axios
-            .post("http://localhost:1337/api/posts", {
+            .post("http://localhost:1337/api/diaries", {
                 data: {
                     date: date,
                     weather: weather,
@@ -35,7 +35,7 @@ export const PostPage = () => {
             .then((response) => {
                 // Handle success.
                 console.log('Well done!');
-                replace("/");
+                replace("/mydiary");
 
             })
 

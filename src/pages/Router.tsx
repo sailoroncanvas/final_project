@@ -11,7 +11,12 @@ import { AlarmPage } from './AlarmPage';
 import { MyPage } from './MyPage';
 import { SOTDPage } from './SOTDPage';
 import { CasualPage } from './CasualPage';
+import { FormalPage } from './FormalPage'
 import { PostPage } from './PostPage';
+import { RomanticPage } from './RomanticPage';
+import { SportsPage } from './SportsPage';
+import { AccessoryPage } from './AccessoryPage';
+import { SeasonSpecialPage } from './SeasonSpecialPage';
 
 export const Router = () => {
   return (
@@ -27,7 +32,12 @@ export const Router = () => {
       <Route path="/my" component={MyPage} />
       <Route path="/sotd" component={SOTDPage} />
       <Route path="/casual" component={CasualPage} />
+      <Route path="/formal" component={FormalPage} />
       <Route path="/post" component={PostPage} />
+      <Route path="/romantic" component={RomanticPage} />
+      <Route path="/sports" component={SportsPage} />
+      <Route path="/accessory" component={AccessoryPage} />
+      <Route path="/seasonspecial" component={SeasonSpecialPage} />
       <Route path="/">
         <Redirect to="/" />
       </Route>
