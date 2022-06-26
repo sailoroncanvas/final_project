@@ -39,7 +39,7 @@ export const MyDiaryPage = () => {
 
         <div>
 
-            <div className="font-lobster text-rose-500 py-6 text-center text-3xl">My Diary</div>
+            <div className="font-lobster text-rose-500 py-8 text-center text-3xl">My Diary</div>
 
             <Swiper
                 spaceBetween={50}
@@ -48,7 +48,7 @@ export const MyDiaryPage = () => {
             >
                 {data?.data?.map((el: any) => <SwiperSlide>
                     <div>
-                        <div className="font-chakra ml-4 mb-2 font-semibold">Date</div>
+                       
                         <div className="flex items-center justify-center relative">
                             <img src={el.attributes.image}></img>
                             <Album_heartIcon className="absolute z-100 bottom-0 right-4" />
