@@ -41,12 +41,16 @@ export const SOTDPage = () => {
 
 
                             <div>
-                                <img
-                                    src="https://images.unsplash.com/photo-1600091166971-7f9faad6c1e2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
-                                    alt=""
-                                    className="w-32 h-32 object-cover rounded-full"
-                                />
-                                <div className="font-bold mt-2 text-center">정장</div>
+                                <Link to="/formal">
+                                    <button>
+                                        <img
+                                            src="https://images.unsplash.com/photo-1600091166971-7f9faad6c1e2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+                                            alt=""
+                                            className="w-32 h-32 object-cover rounded-full"
+                                        />
+                                        <div className="font-bold mt-2 text-center">정장</div>
+                                    </button>
+                                </Link>
                             </div>
 
                         </div>
@@ -55,23 +59,31 @@ export const SOTDPage = () => {
                             <div className="flex flex-row space-x-12 justify-center py-12">
 
                                 <div>
-                                    <img
-                                        src="https://images.unsplash.com/photo-1565462905097-5e701c31dcfb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80"
-                                        alt=""
-                                        className="w-32 h-32 object-cover rounded-full"
-                                    />
-                                    <div className="font-bold mt-2 text-center">로맨틱</div>
+                                    <Link to="/formal">
+                                        <button>
+                                            <img
+                                                src="https://images.unsplash.com/photo-1565462905097-5e701c31dcfb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80"
+                                                alt=""
+                                                className="w-32 h-32 object-cover rounded-full"
+                                            />
+                                            <div className="font-bold mt-2 text-center">로맨틱</div>
+                                        </button>
+                                    </Link>
                                 </div>
 
 
                                 <div>
-                                    <img
-                                        src="https://images.unsplash.com/photo-1541338784564-51087dabc0de?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80
+                                    <Link to="/sports">
+                                        <button>
+                                            <img
+                                                src="https://images.unsplash.com/photo-1541338784564-51087dabc0de?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80
                 "
-                                        alt=""
-                                        className="w-32 h-32 object-cover rounded-full"
-                                    />
-                                    <div className="font-bold mt-2 text-center">트레이닝복</div>
+                                                alt=""
+                                                className="w-32 h-32 object-cover rounded-full"
+                                            />
+                                            <div className="font-bold mt-2 text-center">트레이닝복</div>
+                                        </button>
+                                    </Link>
                                 </div>
 
                             </div>
@@ -83,24 +95,32 @@ export const SOTDPage = () => {
                             <div className="flex flex-row space-x-12 justify-center py-12">
 
                                 <div>
-                                    <img
-                                        src="https://images.unsplash.com/photo-1588117260148-b47818741c74?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80
+                                    <Link to="/accessory">
+                                        <button>
+                                            <img
+                                                src="https://images.unsplash.com/photo-1588117260148-b47818741c74?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80
                 "
-                                        alt=""
-                                        className="w-32 h-32 object-cover rounded-full"
-                                    />
-                                    <div className="font-bold mt-2 text-center">액세서리</div>
+                                                alt=""
+                                                className="w-32 h-32 object-cover rounded-full"
+                                            />
+                                            <div className="font-bold mt-2 text-center">액세서리</div>
+                                        </button>
+                                    </Link>
                                 </div>
 
 
                                 <div>
-                                    <img
-                                        src="https://images.unsplash.com/photo-1632149877166-f75d49000351?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80
+                                    <Link to="/seasonspecial">
+                                        <button>
+                                            <img
+                                                src="https://images.unsplash.com/photo-1632149877166-f75d49000351?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80
                 "
-                                        alt=""
-                                        className="w-32 h-32 object-cover rounded-full"
-                                    />
-                                    <div className="font-bold mt-2 text-center">시즌별 특별 아이템</div>
+                                                alt=""
+                                                className="w-32 h-32 object-cover rounded-full"
+                                            />
+                                            <div className="font-bold mt-2 text-center">시즌별 특별 아이템</div>
+                                        </button>
+                                    </Link>
                                 </div>
 
                             </div>

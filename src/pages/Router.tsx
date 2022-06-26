@@ -24,7 +24,7 @@ export const Router = () => {
       <Route path="/signup" component={SignupPage} />
       <Route path="/login" component={LoginPage} />
       <Route path="/intro" component={IntroPage} />
-      <Route path="/" component={HomePage} exact />
+      <Route path="/home" component={HomePage} exact />
       <Route path="/bulletin" component={BulletinPage} />
       <Route path="/location" component={LocationPage} />
       <Route path="/mydiary" component={MyDiaryPage} />
@@ -39,7 +39,7 @@ export const Router = () => {
       <Route path="/accessory" component={AccessoryPage} />
       <Route path="/seasonspecial" component={SeasonSpecialPage} />
       <Route path="/">
-        <Redirect to="/" />
+        <Redirect to="/home" />
       </Route>
     </Switch>
   );

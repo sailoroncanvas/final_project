@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { ReactComponent as Icon } from '../assets/icons/Polygon 1.svg'
 
 export const LocationPage = () => {
@@ -13,6 +14,17 @@ export const LocationPage = () => {
             <div className="border-4 border-black h-14 flex justify-end items-center mr-8 ml-8">
                 <Icon />
             </div>
+
+            <div>
+                <Link to="/home">
+                <button>
+            <div className="flex items-center mt-6">
+            <div className="ml-40 bg-green-400 py-4 text-white text-center font-lobster text-lg rounded-full">Magic Start!</div>
+            </div>
+            </button>
+            </Link>
+            </div>
+
             </div>
             );
         

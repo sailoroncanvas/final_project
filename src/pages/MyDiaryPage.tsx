@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { ReactComponent as CreateIcon } from '../assets/icons/create.svg';
 
 const dummy = [{
-    
+
     image: 'https://images.unsplash.com/photo-1647891941746-fe1d53ddc7a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
     weather: "How do you feel about Today's Weather?",
     fashionLog: "Show off your style!",
@@ -48,7 +48,7 @@ export const MyDiaryPage = () => {
             >
                 {data?.data?.map((el: any) => <SwiperSlide>
                     <div>
-                        <div className="font-chakra ml-4 mb-2 font-semibold">Date:</div>
+                        <div className="font-chakra ml-4 mb-2 font-semibold">Date</div>
                         <div className="flex items-center justify-center relative">
                             <img src={el.attributes.image}></img>
                             <Album_heartIcon className="absolute z-100 bottom-0 right-4" />
@@ -62,8 +62,8 @@ export const MyDiaryPage = () => {
                     <div className="flex justify-end px-4 mt-4 items-center mt-8">
                         <Link to="/post">
                             <button>
-                        <CreateIcon></CreateIcon>
-                        </button>
+                                <CreateIcon></CreateIcon>
+                            </button>
                         </Link>
                     </div>
 
