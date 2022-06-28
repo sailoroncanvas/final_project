@@ -58,7 +58,7 @@ export const HomePage = () => {
               </button>
             </Link>
           </div>
-          <Link to="/my">
+          <Link to="/signup">
             <button>
               <MyIcon className='w-10 h-10 py-2' />
             </button>

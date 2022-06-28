@@ -8,15 +8,15 @@ export const BulletinPage = () => {
 
         <div>
 
-<div>
-        <Link to=" /home">
-        <button>
-        <BackIcon />
-        </button>
-        </Link>
-        </div>
+            <div>
+                <Link to=" /home">
+                    <button>
+                        <BackIcon />
+                    </button>
+                </Link>
+            </div>
 
-            <div className="text-center py-6 font-bold text-3xl font-lobster text-indigo-500">#OOTD</div>
+            <div className="text-center justify-center font-bold text-3xl font-lobster text-indigo-500">#OOTD</div>
             <div>
                 <img src='https://images.unsplash.com/photo-1529139574466-a303027c1d8b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'
                     className="items-center justify-center ml-3 w-50 h-50 object-cover"></img>

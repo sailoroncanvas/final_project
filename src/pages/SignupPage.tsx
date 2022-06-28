@@ -25,7 +25,7 @@ export const SignupPage = () => {
         console.log('User profile', response.data.user);
         console.log('User token', response.data.jwt);
         localStorage.setItem('token', response.data.jwt);
-        replace("/");
+        replace("/home");
       })
       .catch((error) => {
         // Handle error.
@@ -69,10 +69,10 @@ export const SignupPage = () => {
           }} />
       </div>
       <div>
-        <div className="border-2 border-yellow-700 rounded-full text-gray-800 text-center py-4 font-semibold mt-7 bg-yellow-300" onClick={() => {
+        <div className="border-2 border-yellow-700 rounded-full text-xl text-center py-4 font-semibold mt-7 bg-yellow-300 font-lobster text-white" onClick={() => {
           register();
         }}>
-          회원가입
+          Sign-in
         </div>
       </div>
     </div>
